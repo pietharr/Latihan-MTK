@@ -1,6 +1,6 @@
 # Hitung Ceria
 
-Website latihan matematika kelas 3 SD, lokal tanpa akun atau backend aplikasi. Dibangun dengan React, TypeScript, dan starter Sites/Vinext.
+Website latihan matematika kelas 3 SD tanpa akun atau backend aplikasi. Dibangun dengan React, TypeScript, Vinext, dan Nitro untuk Vercel.
 
 ## Menjalankan
 
@@ -8,20 +8,32 @@ Dari folder `web`, gunakan Node.js 24 (untuk menjalankan tes TypeScript langsung
 
 ```sh
 npm install
-node scripts/run-framework.mjs dev
+npm run dev
 ```
 
-Buka http://localhost:5173. Server harus tetap berjalan selama website dipakai. Tidak ada publikasi online.
+Buka http://localhost:5173. Server harus tetap berjalan selama website dipakai.
 
 ## Pemeriksaan
 
 ```sh
 node --test tests/math.test.ts
 node node_modules/typescript/bin/tsc --noEmit
-node scripts/run-framework.mjs build
+npm run build
 ```
 
 Tersedia juga `npm test`, `npm run typecheck`, dan `npm run build`.
+
+Build produksi menggunakan preset Nitro `vercel` dan menghasilkan folder `.output`.
+
+## Deploy ke Vercel
+
+Hubungkan repository GitHub ke Vercel. Konfigurasi deployment sudah tersimpan di `vercel.json`:
+
+- Framework Preset: `Vite`
+- Build Command: `npm run build`
+- Output Directory: `.output`
+
+Vercel akan memakai konfigurasi tersebut pada setiap deployment.
 
 ## Perilaku
 
