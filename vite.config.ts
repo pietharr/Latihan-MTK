@@ -9,9 +9,6 @@ export default defineConfig({
     vinext(),
     nitro({
       preset: "vercel",
-      output: {
-        dir: ".output",
-      },
     }),
   ],
 });
